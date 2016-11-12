@@ -1,0 +1,26 @@
+
+html, body, #root {
+  height: 100%;
+}
+
+.container {
+  margin: 50px;
+  width: 100%;
+}
+
+.ant-form-inline .ant-form-item {
+  margin-bottom: 20px;
+}
+
+.json_form_group {
+  display: block;
+}
+
+.json_form_label {
+  display: inline;
+}
+
+.json_form_control {
+  display: inline;
+  margin-bottom: 20px;
+}
