@@ -88,34 +88,37 @@ class MultiSelect extends Component {
     });
 
     return (
-      <FormItem
-        label={title}
-        labelCol={{ span: 12 }}
-        wrapperCol={{ span: 12 }}
-      >
-        <div className="ant-search-input-wrapper" style={styles.controlWidth}>
-          <Input.Group className={searchCls}>
-        { getFieldDecorator(name, { initialValue: value })(
-               <Select
-                 multiple
-                 filterOption={(inputValue, option) => {
-                   return option.props.children.indexOf(inputValue) > -1;
-                 }}
-               >
-                 { this.renderOptions() }
-               </Select>
+      <div className='json-form-group'>
+        <div className='json-form-label'>
+          <label htmlFor={name}>{title}</label>
+        </div>
+        <div className='json-form-control'>
+          <FormItem>
+            <div className="ant-search-input-wrapper" style={styles.controlWidth}>
+              <Input.Group className={searchCls}>
+              { getFieldDecorator(name, { initialValue: value })(
+                     <Select
+                       multiple
+                       filterOption={(inputValue, option) => {
+                         return option.props.children.indexOf(inputValue) > -1;
+                       }}
+                     >
+                       { this.renderOptions() }
+                     </Select>
 
-         )}
-         <div className="ant-input-group-wrap">
-           <Button className={btnCls}>
-             <Checkbox
-               onChange={this.onCheckboxToggle.bind(this)}
-             />
-           </Button>
-         </div>
-       </Input.Group>
-     </div>
-      </FormItem>
+               )}
+               <div className="ant-input-group-wrap">
+                 <Button className={btnCls}>
+                   <Checkbox
+                     onChange={this.onCheckboxToggle.bind(this)}
+                   />
+                 </Button>
+               </div>
+             </Input.Group>
+           </div>
+          </FormItem>
+        </div>
+      </div>
     );
   }
 }

@@ -204,7 +204,7 @@ class Grid extends Component {
     const { getFieldDecorator } = form;
     const columns = this.getColumns(properties);
     return (
-      <div>
+      <div className='json-form-table'>
         <div>
           <Button type="primary" onClick={this.addItem.bind(this)}>Add</Button>
         </div>

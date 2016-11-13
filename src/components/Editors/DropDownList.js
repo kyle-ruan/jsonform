@@ -62,19 +62,23 @@ class DropDownList extends Component {
     const { name, title, value = '', form } = this.props;
     const { getFieldDecorator } = form;
     return (
-      <FormItem
-        label={title}
-        labelCol={{ span: 12 }}
-        wrapperCol={{ span: 12 }}
-      >
-        {getFieldDecorator(name, {
-             initialValue: value
-           })(
-             <Select style={styles.controlWidth}>
-               {this.renderOptions()}
-             </Select>
-         )}
-      </FormItem>
+      <div className='json-form-group'>
+        <div className='json-form-label'>
+          <label htmlFor={name}>{title}</label>
+        </div>
+        <div className='json-form-control'>
+          <FormItem>
+            {getFieldDecorator(name, {
+                 initialValue: value
+               })(
+                 <Select style={styles.controlWidth}>
+                   {this.renderOptions()}
+                 </Select>
+             )}
+          </FormItem>
+        </div>
+      </div>
+
     );
   }
 }

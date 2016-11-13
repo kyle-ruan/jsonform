@@ -7,19 +7,22 @@ const format = 'HH:mm';
 const TimePicker = ({ name, title, value, form }) => {
   const { getFieldDecorator } = form;
   return (
-    <FormItem
-      label={title}
-      labelCol={{ span: 12 }}
-      wrapperCol={{ span: 12 }}
-    >
-      {getFieldDecorator(name, {
-           initialValue: value
-         })(
-         <AntTimePicker
-           format={format}
-         />
-       )}
-    </FormItem>
+    <div className='json-form-group'>
+      <div className='json-form-label'>
+        <label htmlFor={name}>{title}</label>
+      </div>
+      <div className='json-form-control'>
+        <FormItem>
+          {getFieldDecorator(name, {
+               initialValue: value
+             })(
+             <AntTimePicker
+               format={format}
+             />
+           )}
+        </FormItem>
+      </div>
+    </div>
   );
 };
 

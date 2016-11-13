@@ -9,9 +9,13 @@ const ObjectEditor = (({ name, title, form, properties, value }) => {
         const field = properties[key];
         const childValue = value[key];
         return (
-          <div key={key}>
-            <FieldEditor form={form} value={childValue} name={`${name}.${key}`} field={field} />
-          </div>
+          <FieldEditor
+            key={key}
+            form={form}
+            value={childValue}
+            name={`${name}.${key}`}
+            field={field}
+          />
         );
       })}
     </div>

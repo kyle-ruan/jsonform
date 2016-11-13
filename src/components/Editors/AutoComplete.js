@@ -37,6 +37,22 @@ class AutoComplete extends Component {
     }
   }
 
+  renderFormItem() {
+    const { name, value = '', form } = this.props;
+    const { getFieldDecorator } = form;
+    return (
+      <FormItem>
+        {getFieldDecorator(name, {
+             initialValue: value
+           })(
+             <AntAutoComplete style={styles.controlWidth}>
+               {this.renderOptions()}
+             </AntAutoComplete>
+         )}
+      </FormItem>
+    );
+  }
+
   renderOptions() {
     return this.state.options.map((option, index) => {
       return (
@@ -50,22 +66,18 @@ class AutoComplete extends Component {
     });
   }
   render() {
-    const { name, title, value = '', form } = this.props;
-    const { getFieldDecorator } = form;
+    const { name, title } = this.props;
+
     return (
-      <FormItem
-        label={title}
-        labelCol={{ span: 12 }}
-        wrapperCol={{ span: 12 }}
-      >
-        {getFieldDecorator(name, {
-             initialValue: value
-           })(
-             <AntAutoComplete style={styles.controlWidth}>
-               {this.renderOptions()}
-             </AntAutoComplete>
-         )}
-      </FormItem>
+      <div className='json-form-group'>
+        <div className='json-form-label'>
+          <label htmlFor={name}>{title}</label>
+        </div>
+        <div className='json-form-control'>
+          {this.renderFormItem()}
+        </div>
+      </div>
+
     );
   }
 }
