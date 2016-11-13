@@ -1,7 +1,5 @@
-import moment from 'moment';
-
 const schema = {
-  ClientMatching: {
+  Client: {
     type: 'object',
     title: 'Client Matching',
     default: {

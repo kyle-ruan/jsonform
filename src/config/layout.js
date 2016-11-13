@@ -22,7 +22,7 @@ const layout = {
           { name: 'TextAreaInput', span: 24 }
         ],
         [
-          { name: 'ClientMatching', span: 24 }
+          { name: 'Client', span: 24 }
         ],
         [
           { name: 'Clients', span: 24 }
