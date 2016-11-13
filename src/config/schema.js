@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const schema = {
   ClientMatching: {
     type: 'object',
@@ -154,7 +156,11 @@ const schema = {
       DateOfBirth: {
         type: 'date',
         title: 'Date Of Birth',
-        default: null
+        default: null,
+        template(val) {
+          if (!val) return '';
+          return val.format('YYYY-MM-DD');
+        }
       }
     }
   }

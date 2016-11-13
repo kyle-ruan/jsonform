@@ -5,7 +5,11 @@ import FieldEditor from '../FieldEditor';
 class ModalForm extends Component {
   onOkClick() {
     const modalFormValues = this.props.form.getFieldsValue();
-    this.props.onItemChange(modalFormValues);
+    if (!this.props.editMode) {
+      this.props.onItemAdded(modalFormValues);
+    } else {
+      this.props.onItemEdited(modalFormValues);
+    }
   }
 
   renderModalItem() {
