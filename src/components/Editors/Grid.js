@@ -209,7 +209,7 @@ class Grid extends Component {
           <Button type="primary" onClick={this.addItem.bind(this)}>Add</Button>
         </div>
 
-        <FormItem>
+        <FormItem style={{ width: '100%' }}>
           {getFieldDecorator(name)(
             <Table
               columns={columns}

@@ -4,23 +4,18 @@ html, body, #root {
 }
 
 .container {
-  margin: 50px;
-  width: 100%;
+  margin: 50px auto;
+  width: 80%;
 }
 
 .ant-form-inline .ant-form-item {
   margin-bottom: 20px;
 }
 
-.json_form_group {
-  display: block;
+.json-form-table {
+  width: 100%;
+  margin: 15px 0;
 }
-
-.json_form_label {
-  display: inline;
-}
-
-.json_form_control {
-  display: inline;
-  margin-bottom: 20px;
+.json-form-table div:first-child {
+  width: 100%;
 }
