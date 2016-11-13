@@ -27,6 +27,8 @@ html, body, #root {
 .json-form-object {
   padding: 20px;
   border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f7f7f7;
 }
 
 .json-form-object label:first-of-type {
