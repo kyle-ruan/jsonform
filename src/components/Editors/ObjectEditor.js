@@ -3,8 +3,10 @@ import FieldEditor from '../FieldEditor';
 
 const ObjectEditor = (({ name, title, form, properties, value }) => {
   return (
-    <div style={{ border: 'solid', borderWidth: 1, borderRadius: 5, borderColor: '#d6d7da' }}>
-      <label htmlFor={name}><strong>{title}</strong></label>
+    <div className='json-form-object'>
+      <label htmlFor={name}>
+        {title}
+      </label>
       {Object.keys(properties).map((key) => {
         const field = properties[key];
         const childValue = value[key];

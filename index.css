@@ -12,10 +12,37 @@ html, body, #root {
   margin-bottom: 20px;
 }
 
+.json-form-group {
+
+}
+
+.json-form-label {
+
+}
+
+.json-form-control {
+
+}
+
+.json-form-object {
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.json-form-object label:first-of-type {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .json-form-table {
   width: 100%;
   margin: 15px 0;
 }
-.json-form-table div:first-child {
+
+.json-form-table-add-btn {
+  margin-bottom: 15px;
+}
+
+.json-form-table div:first-of-type {
   width: 100%;
 }

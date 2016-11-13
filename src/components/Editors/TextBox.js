@@ -12,13 +12,13 @@ const TextBox = ({ value = '', title, name, form, format = 'text' }) => {
         <label htmlFor={name}>{title}</label>
       </div>
       <div className='json-form-control'>
-        <FormItem>
+        <FormItem style={{ width: '100%' }}>
           {getFieldDecorator(name, {
                initialValue: value
              })(
              <Input
                type={format}
-               style={styles.controlWidth}
+               style={format === 'textarea' ? {} : styles.controlWidth}
              />
            )}
         </FormItem>

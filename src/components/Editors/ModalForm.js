@@ -35,12 +35,12 @@ class ModalForm extends Component {
   }
 
   render() {
-    const { visible, onModalClose } = this.props;
-
+    const { visible, onModalClose, editMode } = this.props;
+    const title = editMode ? 'Edit Item' : 'Add Item';
     return (
       <Modal
         visible={visible}
-        title='Edit Item'
+        title={title}
         okText='OK'
         onCancel={onModalClose}
         onOk={this.onOkClick.bind(this)}
