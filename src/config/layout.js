@@ -19,7 +19,7 @@ const layout = {
           { name: 'AsnycMultipleSelect', span: { xs: 24, sm: 24, md: 12, lg: 12 } }
         ],
         [
-          { name: 'TextAreaInput', span: { xs: 24, sm: 24, md: 24, lg: 24 } }
+          { name: 'TextAreaInput', span: 24 }
         ],
         [
           {
