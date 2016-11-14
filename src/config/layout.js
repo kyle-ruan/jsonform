@@ -3,32 +3,44 @@ const layout = {
     {
       rows: [
         [
-          { name: 'TextInput', span: 12 },
-          { name: 'AutoCompleteInput', span: 12 }
+          { name: 'TextInput', span: { xs: 24, sm: 24, md: 12, lg: 12 } },
+          { name: 'AutoCompleteInput', span: { xs: 24, sm: 24, md: 12, lg: 12 } }
         ],
         [
-          { name: 'DateInput', span: 12 },
-          { name: 'DateTimeInput', span: 12 }
+          { name: 'DateInput', span: { xs: 24, sm: 24, md: 12, lg: 12 } },
+          { name: 'DateTimeInput', span: { xs: 24, sm: 24, md: 12, lg: 12 } }
         ],
         [
-          { name: 'SingleSelect', span: 12 },
-          { name: 'MultipleSelect', span: 12 }
+          { name: 'SingleSelect', span: { xs: 24, sm: 24, md: 12, lg: 12 } },
+          { name: 'MultipleSelect', span: { xs: 24, sm: 24, md: 12, lg: 12 } }
         ],
         [
-          { name: 'Boolean', span: 12 },
-          { name: 'AsnycMultipleSelect', span: 12 }
+          { name: 'Boolean', span: { xs: 24, sm: 24, md: 12, lg: 12 } },
+          { name: 'AsnycMultipleSelect', span: { xs: 24, sm: 24, md: 12, lg: 12 } }
         ],
         [
-          { name: 'TextAreaInput', span: 24 }
+          { name: 'TextAreaInput', span: { xs: 24, sm: 24, md: 24, lg: 24 } }
         ],
         [
-          { name: 'Client', span: 24 }
+          {
+            name: 'Client',
+            span: { xs: 24, sm: 24, md: 24, lg: 24 },
+            rows: [
+              [
+                { propName: 'FirstName', span: { xs: 24, sm: 24, md: 12, lg: 12 } },
+                { propName: 'LastName', span: { xs: 24, sm: 24, md: 12, lg: 12 } }
+              ],
+              [
+                { propName: 'DateOfBirth', span: { xs: 24, sm: 24, md: 24, lg: 24 } }
+              ]
+            ]
+          }
         ],
         [
           { name: 'Clients', span: 24 }
         ]
       ],
-      span: 24
+      span: { xs: 24, sm: 24, md: 24, lg: 24 }
     }
   ]
 };

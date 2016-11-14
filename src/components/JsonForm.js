@@ -30,8 +30,9 @@ class JsonForm extends Component {
 
     return columns.map((column, colIndex) => {
       const { rows } = column;
+
       return (
-        <Col key={colIndex} span={column.span}>
+        <Col key={colIndex} {...column.span}>
           {rows.map((row, rowIndex) => {
             return (
               <Row key={rowIndex}>
@@ -41,12 +42,13 @@ class JsonForm extends Component {
                   const value = values[name];
 
                   return (
-                    <Col key={rowColIndex} span={item.span}>
+                    <Col key={rowColIndex} {...item.span}>
                       <FieldEditor
                         form={form}
                         name={name}
                         field={field}
                         value={value}
+                        rows={item.rows}
                       />
                     </Col>
                   );

@@ -9,6 +9,7 @@ const schema = {
         type: 'text',
         title: 'First Name',
         default: '',
+        rules: [{ type: 'string', required: true, message: 'Please input something!' }]
       },
       LastName: {
         type: 'text',

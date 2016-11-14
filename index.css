@@ -20,6 +20,7 @@ html, body, #root {
 
 .ant-form-inline .ant-form-item > div {
   width: 100%;
+  padding-left: 25px;
   padding-right: 25px;
 }
 
@@ -35,6 +36,7 @@ html, body, #root {
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: bold;
+  padding-left: 25px;
 }
 
 .json-form-control {
@@ -42,15 +44,18 @@ html, body, #root {
 }
 
 .json-form-object {
-  padding: 20px;
   border: 1px solid #ddd;
   border-radius: 10px;
   background-color: #f7f7f7;
+  margin-left: 25px;
+  margin-right: 40px;
 }
 
-.json-form-object label:first-of-type {
+.json-form-object > label {
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 15px;
+  padding-left: 22px;
 }
 
 .json-form-table {
@@ -60,6 +65,7 @@ html, body, #root {
 
 .json-form-table-add-btn {
   margin-bottom: 15px;
+  padding-left: 25px;
 }
 
 .json-form-table div:first-of-type {

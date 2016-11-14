@@ -143,12 +143,15 @@ class FieldEditor extends Component {
 
       case 'object': {
         const { properties } = field;
+        const { rows } = this.props;
+
         return (
           <ObjectEditor
             form={form}
             name={name}
             value={value}
             title={title}
+            rows={rows}
             properties={properties}
           />
         );
