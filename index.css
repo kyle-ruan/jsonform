@@ -28,6 +28,10 @@ html, body, #root {
   width: 100%;
 }
 
+.ant-modal-body .json-form-label {
+  padding-left: 0;
+}
+
 .json-form-group {
 
 }
