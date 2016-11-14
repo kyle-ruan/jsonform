@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Form, AutoComplete as AntAutoComplete } from 'antd';
 import axios from 'axios';
-import styles from '../../styles';
 
 const FormItem = Form.Item;
 const { Option } = AntAutoComplete;
@@ -46,7 +45,7 @@ class AutoComplete extends Component {
              initialValue: value,
              rules
            })(
-             <AntAutoComplete style={styles.controlWidth}>
+             <AntAutoComplete>
                {this.renderOptions()}
              </AntAutoComplete>
          )}

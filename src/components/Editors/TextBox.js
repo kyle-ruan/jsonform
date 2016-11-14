@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, Input } from 'antd';
-import styles from '../../styles';
 
 const FormItem = Form.Item;
 
@@ -17,10 +16,7 @@ const TextBox = ({ value = '', title, name, form, format = 'text', rules }) => {
                initialValue: value,
                rules
              })(
-             <Input
-               type={format}
-               style={format === 'textarea' ? {} : styles.controlWidth}
-             />
+             <Input type={format} />
            )}
         </FormItem>
       </div>

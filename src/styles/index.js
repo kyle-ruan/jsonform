@@ -1,6 +1,6 @@
 const styles = {
   controlWidth: {
-    width: 200
+
   }
 };
 

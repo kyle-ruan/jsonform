@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Select } from 'antd';
 import axios from 'axios';
-import styles from '../../styles';
 
 const FormItem = Form.Item;
 const { Option } = Select;
@@ -72,7 +71,7 @@ class DropDownList extends Component {
                  initialValue: value,
                  rules
                })(
-                 <Select style={styles.controlWidth}>
+                 <Select>
                    {this.renderOptions()}
                  </Select>
              )}

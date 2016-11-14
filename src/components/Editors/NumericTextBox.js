@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, InputNumber } from 'antd';
-import styles from '../../styles';
 
 const FormItem = Form.Item;
 
@@ -17,9 +16,7 @@ const NumericTextBox = ({ value = 0, title, name, form, rules }) => {
                initialValue: value,
                rules
              })(
-             <InputNumber
-               style={styles.controlWidth}
-             />
+             <InputNumber />
            )}
         </FormItem>
       </div>

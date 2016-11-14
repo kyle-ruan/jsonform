@@ -35,31 +35,47 @@ class Grid extends Component {
   onItemAdded(dataItem) {
     const { name, form } = this.props;
     const fieldValue = form.getFieldValue(name);
+    const modalForm = this.modalForm;
 
-    form.setFieldsValue({
-      [name]: [...fieldValue, dataItem]
-    });
+    modalForm.validateFields((err) => {
+      if (err) {
+        return;
+      }
 
-    this.setState({
-      visible: false,
-      dataSource: this.getDataSourceAfterAdd(dataItem)
+      modalForm.resetFields();
+      form.setFieldsValue({
+        [name]: [...fieldValue, dataItem]
+      });
+
+      this.setState({
+        visible: false,
+        dataSource: this.getDataSourceAfterAdd(dataItem)
+      });
     });
   }
 
   onItemEdited(dataItem) {
     const { name, form } = this.props;
     const { editItemIndex } = this.state;
-    console.log(editItemIndex);
-    const fieldValue = [...form.getFieldValue(name)];
-    fieldValue.splice(editItemIndex, 1, dataItem);
-    form.setFieldsValue({
-      [name]: fieldValue
-    });
-    const newDataSource = this.getDataSourceAfterEdit(dataItem);
-    this.setState({
-      visible: false,
-      editItemIndex: -1,
-      dataSource: newDataSource
+    const modalForm = this.modalForm;
+
+    modalForm.validateFields((err) => {
+      if (err) {
+        return;
+      }
+
+      modalForm.resetFields();
+      const fieldValue = [...form.getFieldValue(name)];
+      fieldValue.splice(editItemIndex, 1, dataItem);
+      form.setFieldsValue({
+        [name]: fieldValue
+      });
+      const newDataSource = this.getDataSourceAfterEdit(dataItem);
+      this.setState({
+        visible: false,
+        editItemIndex: -1,
+        dataSource: newDataSource
+      });
     });
   }
 
@@ -181,6 +197,10 @@ class Grid extends Component {
     });
   }
 
+  saveFormRef(modalForm) {
+    this.modalForm = modalForm;
+  }
+
   renderModal() {
     const { visible, modalItem, editItemIndex } = this.state;
     const { properties } = this.props;
@@ -188,6 +208,7 @@ class Grid extends Component {
 
     return (
       <ModalForm
+        ref={this.saveFormRef.bind(this)}
         visible={visible}
         item={modalItem}
         properties={properties}

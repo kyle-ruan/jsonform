@@ -1,11 +1,28 @@
 import React, { Component } from 'react';
 import { Row, Col, Form, Button } from 'antd';
 import FieldEditor from './FieldEditor';
+import { onFormSubmit } from '../config/callbacks';
 
 class JsonForm extends Component {
   handleSubmit(e) {
+    const errors = [];
     e.preventDefault();
-    console.log(this.props.form.getFieldsValue());
+    this.props.form.validateFields((err) => {
+      if (err) {
+        errors.push(err);
+        console.log(err);
+      }
+    });
+
+    if (errors.length > 0) {
+      console.log('errors when submitting form.');
+      return;
+    }
+    const formValues = this.props.form.getFieldsValue();
+
+    onFormSubmit(formValues, {
+      name: 'Appointment Filters'
+    });
   }
 
   renderEditors() {

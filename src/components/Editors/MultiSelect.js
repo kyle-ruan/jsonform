@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import { Form, Input, Button, Checkbox, Select } from 'antd';
 import axios from 'axios';
-import styles from '../../styles';
 
 const FormItem = Form.Item;
 const { Option } = Select;
@@ -94,11 +93,11 @@ class MultiSelect extends Component {
         </div>
         <div className='json-form-control'>
           <FormItem>
-            <div className="ant-search-input-wrapper" style={styles.controlWidth}>
+            <div className="ant-search-input-wrapper">
               <Input.Group className={searchCls}>
               { getFieldDecorator(name, {
                 initialValue: value,
-                rules 
+                rules
               })(
                      <Select
                        multiple

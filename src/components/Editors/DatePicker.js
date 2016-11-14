@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, DatePicker as AntDatePicker } from 'antd';
-import styles from '../../styles';
 
 const FormItem = Form.Item;
 const format = 'YYYY-MM-DD';
@@ -20,7 +19,6 @@ const DatePicker = ({ name, title, value, form, rules }) => {
              })(
              <AntDatePicker
                format={format}
-               style={styles.controlWidth}
              />
            )}
         </FormItem>
