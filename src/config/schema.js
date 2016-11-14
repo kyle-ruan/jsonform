@@ -34,12 +34,14 @@ const schema = {
     dataSource: {
       async: true,
       read: '/api/customers.json'
-    }
+    },
+    rules: [{ type: 'string', required: true, message: 'Please input something!' }]
   },
   DateInput: {
     type: 'date',
     title: 'Date',
-    default: null
+    default: null,
+    rules: [{ type: 'object', required: true, message: 'Please select a date!' }]
   },
   DateTimeInput: {
     type: 'datetime',

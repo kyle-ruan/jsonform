@@ -4,7 +4,7 @@ import { Form, TimePicker as AntTimePicker } from 'antd';
 
 const FormItem = Form.Item;
 const format = 'HH:mm';
-const TimePicker = ({ name, title, value, form }) => {
+const TimePicker = ({ name, title, value, form, rules }) => {
   const { getFieldDecorator } = form;
   return (
     <div className='json-form-group'>
@@ -14,7 +14,8 @@ const TimePicker = ({ name, title, value, form }) => {
       <div className='json-form-control'>
         <FormItem>
           {getFieldDecorator(name, {
-               initialValue: value
+               initialValue: value,
+               rules
              })(
              <AntTimePicker
                format={format}

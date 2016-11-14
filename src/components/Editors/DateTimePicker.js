@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, DatePicker as AntDatePicker } from 'antd';
-import moment from 'moment';
 import styles from '../../styles';
 
 const FormItem = Form.Item;
@@ -10,8 +9,9 @@ const DateTimePicker = ({
   name,
   title,
   form,
-  value, }
-) => {
+  value,
+  rules
+}) => {
   const { getFieldDecorator } = form;
 
   return (
@@ -22,7 +22,8 @@ const DateTimePicker = ({
       <div className='json-form-control'>
         <FormItem>
           {getFieldDecorator(name, {
-               initialValue: value
+               initialValue: value,
+               rules
              })(
                <AntDatePicker
                  format={format}

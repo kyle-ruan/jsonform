@@ -75,7 +75,7 @@ class MultiSelect extends Component {
   }
 
   render() {
-    const { name, title, value = [], form } = this.props;
+    const { name, title, value = [], form, rules } = this.props;
     const { getFieldDecorator } = form;
 
     const btnCls = classNames({
@@ -96,7 +96,10 @@ class MultiSelect extends Component {
           <FormItem>
             <div className="ant-search-input-wrapper" style={styles.controlWidth}>
               <Input.Group className={searchCls}>
-              { getFieldDecorator(name, { initialValue: value })(
+              { getFieldDecorator(name, {
+                initialValue: value,
+                rules 
+              })(
                      <Select
                        multiple
                        filterOption={(inputValue, option) => {

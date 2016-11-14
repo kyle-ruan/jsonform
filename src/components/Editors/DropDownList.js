@@ -59,7 +59,7 @@ class DropDownList extends Component {
     });
   }
   render() {
-    const { name, title, value = '', form } = this.props;
+    const { name, title, value = '', form, rules } = this.props;
     const { getFieldDecorator } = form;
     return (
       <div className='json-form-group'>
@@ -69,7 +69,8 @@ class DropDownList extends Component {
         <div className='json-form-control'>
           <FormItem>
             {getFieldDecorator(name, {
-                 initialValue: value
+                 initialValue: value,
+                 rules
                })(
                  <Select style={styles.controlWidth}>
                    {this.renderOptions()}

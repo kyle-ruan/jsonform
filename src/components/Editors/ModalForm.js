@@ -15,7 +15,7 @@ class ModalForm extends Component {
   renderModalItem() {
     const { visible } = this.props;
     if (!visible) return;
-    const { properties, item, form } = this.props;
+    const { properties, item, form, rules } = this.props;
 
     return Object.keys(properties).map((key) => {
       const field = properties[key];
@@ -28,6 +28,7 @@ class ModalForm extends Component {
             value={childValue}
             name={key}
             field={field}
+            rules={rules}
           />
         </div>
       );

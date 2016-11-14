@@ -5,7 +5,7 @@ import styles from '../../styles';
 const FormItem = Form.Item;
 const format = 'YYYY-MM-DD';
 
-const DatePicker = ({ name, title, value, form }) => {
+const DatePicker = ({ name, title, value, form, rules }) => {
   const { getFieldDecorator } = form;
   return (
     <div className='json-form-group'>
@@ -15,7 +15,8 @@ const DatePicker = ({ name, title, value, form }) => {
       <div className='json-form-control'>
         <FormItem>
           {getFieldDecorator(name, {
-               initialValue: value
+               initialValue: value,
+               rules
              })(
              <AntDatePicker
                format={format}

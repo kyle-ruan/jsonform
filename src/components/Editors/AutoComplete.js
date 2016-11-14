@@ -38,12 +38,13 @@ class AutoComplete extends Component {
   }
 
   renderFormItem() {
-    const { name, value = '', form } = this.props;
+    const { name, value = '', form, rules } = this.props;
     const { getFieldDecorator } = form;
     return (
       <FormItem>
         {getFieldDecorator(name, {
-             initialValue: value
+             initialValue: value,
+             rules
            })(
              <AntAutoComplete style={styles.controlWidth}>
                {this.renderOptions()}

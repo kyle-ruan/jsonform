@@ -14,7 +14,7 @@ import { ObjectEditor } from './Editors/ObjectEditor';
 class FieldEditor extends Component {
   renderEditor() {
     const { name, field, form, value } = this.props;
-    const { type, title } = field;
+    const { type, title, rules } = field;
     switch (type) {
       case 'text': {
         if (field.autocomplete) {
@@ -24,6 +24,7 @@ class FieldEditor extends Component {
               value={value}
               name={name}
               title={title}
+              rules={rules}
               dataSource={field.dataSource}
             />
           );
@@ -34,6 +35,7 @@ class FieldEditor extends Component {
             value={value}
             format={field.format}
             name={name}
+            rules={rules}
             title={title}
           />
         );
@@ -46,6 +48,7 @@ class FieldEditor extends Component {
             name={name}
             value={value}
             title={title}
+            rules={rules}
           />
         );
       }
@@ -56,6 +59,7 @@ class FieldEditor extends Component {
             form={form}
             name={name}
             title={title}
+            rules={rules}
           />
         );
       }
@@ -66,6 +70,7 @@ class FieldEditor extends Component {
             form={form}
             name={name}
             value={value}
+            rules={rules}
             title={title}
           />
         );
@@ -78,6 +83,7 @@ class FieldEditor extends Component {
             value={value}
             name={name}
             title={title}
+            rules={rules}
           />
         );
       }
@@ -89,6 +95,7 @@ class FieldEditor extends Component {
             form={form}
             name={name}
             title={title}
+            rules={rules}
           />
         );
       }
@@ -103,6 +110,7 @@ class FieldEditor extends Component {
               value={value}
               form={form}
               properties={properties}
+              rules={rules}
             />
           );
         }
@@ -116,6 +124,7 @@ class FieldEditor extends Component {
               name={name}
               title={title}
               dataSource={field.dataSource}
+              rules={rules}
             />
           );
         }
@@ -127,6 +136,7 @@ class FieldEditor extends Component {
             name={name}
             title={title}
             dataSource={field.dataSource}
+            rules={rules}
           />
         );
       }

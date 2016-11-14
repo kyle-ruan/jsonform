@@ -4,7 +4,7 @@ import styles from '../../styles';
 
 const FormItem = Form.Item;
 
-const NumericTextBox = ({ value = 0, title, name, form }) => {
+const NumericTextBox = ({ value = 0, title, name, form, rules }) => {
   const { getFieldDecorator } = form;
   return (
     <div className='json-form-group'>
@@ -14,7 +14,8 @@ const NumericTextBox = ({ value = 0, title, name, form }) => {
       <div className='json-form-control'>
         <FormItem>
           {getFieldDecorator(name, {
-               initialValue: value
+               initialValue: value,
+               rules
              })(
              <InputNumber
                style={styles.controlWidth}

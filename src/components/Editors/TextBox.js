@@ -4,7 +4,7 @@ import styles from '../../styles';
 
 const FormItem = Form.Item;
 
-const TextBox = ({ value = '', title, name, form, format = 'text' }) => {
+const TextBox = ({ value = '', title, name, form, format = 'text', rules }) => {
   const { getFieldDecorator } = form;
   return (
     <div className='json-form-group'>
@@ -14,7 +14,8 @@ const TextBox = ({ value = '', title, name, form, format = 'text' }) => {
       <div className='json-form-control'>
         <FormItem style={{ width: '100%' }}>
           {getFieldDecorator(name, {
-               initialValue: value
+               initialValue: value,
+               rules
              })(
              <Input
                type={format}
