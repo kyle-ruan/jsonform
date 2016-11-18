@@ -9,7 +9,10 @@ const { Option } = Select;
 class MultiSelect extends Component {
   constructor(props) {
     super(props);
-    this.state = { options: [] };
+    this.state = {
+      options: [],
+      checked: false
+    };
   }
 
   componentDidMount() {
@@ -46,18 +49,24 @@ class MultiSelect extends Component {
     }
   }
 
-  onCheckboxToggle(e) {
-    const { checked } = e.target;
-    const { name, form } = this.props;
-    const { setFieldsValue } = form;
+  onButtonClick() {
 
-    if (checked) {
-      setFieldsValue({
-        [name]: this.state.options.map(option => option.value.toString())
-      });
-    } else {
-      setFieldsValue({ [name]: [] });
-    }
+  }
+
+  onCheckboxToggle() {
+    this.setState({ checked: !this.state.checked }, () => {
+      const { checked } = this.state;
+      const { name, form } = this.props;
+      const { setFieldsValue } = form;
+
+      if (checked) {
+        setFieldsValue({
+          [name]: this.state.options.map(option => option.value.toString())
+        });
+      } else {
+        setFieldsValue({ [name]: [] });
+      }
+    });
   }
 
   renderOptions() {
@@ -110,8 +119,9 @@ class MultiSelect extends Component {
 
                )}
                <div className="ant-input-group-wrap">
-                 <Button className={btnCls}>
+                 <Button className={btnCls} onClick={this.onCheckboxToggle.bind(this)}>
                    <Checkbox
+                     checked={this.state.checked}
                      onChange={this.onCheckboxToggle.bind(this)}
                    />
                  </Button>
