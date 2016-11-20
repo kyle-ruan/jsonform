@@ -29,7 +29,7 @@ const schema = {
   },
   AutoCompleteInput: {
     type: 'text',
-    autocomplete: true,
+    format: 'autocomplete',
     title: 'Auto Complete',
     default: '',
     dataSource: {

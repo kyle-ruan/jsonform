@@ -6,8 +6,7 @@ const layout = {
           { name: 'TextInput', span: { xs: 24, sm: 24, md: 12, lg: 12 } },
           {
             name: 'AutoCompleteInput',
-            span: { xs: 24, sm: 24, md: 12, lg: 12 },
-            disabled: true
+            span: { xs: 24, sm: 24, md: 12, lg: 12 }
           }
         ],
         [

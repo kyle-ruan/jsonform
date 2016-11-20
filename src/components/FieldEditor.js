@@ -19,7 +19,7 @@ class FieldEditor extends Component {
     const { type, title, rules } = field;
     switch (type) {
       case 'text': {
-        if (field.autocomplete) {
+        if (field.format === 'autocomplete') {
           return (
             <AutoComplete
               form={form}
