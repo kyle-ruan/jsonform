@@ -48,16 +48,21 @@ class JsonForm extends Component {
             return (
               <Row key={rowIndex}>
                 {row.map((item, rowColIndex) => {
-                  const { name } = item;
+                  const { name, disabled, visible = true } = item;
                   const field = schema[name];
                   const value = values[name];
 
                   return (
-                    <Col key={rowColIndex} {...item.span}>
+                    <Col
+                      key={rowColIndex}
+                      style={visible ? {} : { display: 'none' }}
+                      {...item.span}
+                    >
                       <FieldEditor
                         form={form}
                         name={name}
                         field={field}
+                        disabled={disabled}
                         value={value}
                         rows={item.rows}
                       />

@@ -13,7 +13,7 @@ import { ObjectEditor } from './Editors/ObjectEditor';
 
 class FieldEditor extends Component {
   renderEditor() {
-    const { name, field, form, value } = this.props;
+    const { name, field, form, disabled, value } = this.props;
     const { type, title, rules } = field;
     switch (type) {
       case 'text': {
@@ -25,6 +25,7 @@ class FieldEditor extends Component {
               name={name}
               title={title}
               rules={rules}
+              disabled={disabled}
               dataSource={field.dataSource}
             />
           );
@@ -36,6 +37,7 @@ class FieldEditor extends Component {
             format={field.format}
             name={name}
             rules={rules}
+            disabled={disabled}
             title={title}
           />
         );
@@ -48,6 +50,7 @@ class FieldEditor extends Component {
             name={name}
             value={value}
             title={title}
+            disabled={disabled}
             rules={rules}
           />
         );
@@ -60,6 +63,7 @@ class FieldEditor extends Component {
             name={name}
             title={title}
             rules={rules}
+            disabled={disabled}
           />
         );
       }
@@ -72,6 +76,7 @@ class FieldEditor extends Component {
             value={value}
             rules={rules}
             title={title}
+            disabled={disabled}
           />
         );
       }
@@ -84,6 +89,7 @@ class FieldEditor extends Component {
             name={name}
             title={title}
             rules={rules}
+            disabled={disabled}
           />
         );
       }
@@ -96,6 +102,7 @@ class FieldEditor extends Component {
             name={name}
             title={title}
             rules={rules}
+            disabled={disabled}
           />
         );
       }
@@ -103,12 +110,14 @@ class FieldEditor extends Component {
       case 'array': {
         if (field.format === 'table') {
           const { properties } = field;
+          const { rows } = this.props;
           return (
             <Grid
               name={name}
               title={title}
               value={value}
               form={form}
+              rows={rows}
               properties={properties}
               rules={rules}
             />
@@ -125,6 +134,7 @@ class FieldEditor extends Component {
               title={title}
               dataSource={field.dataSource}
               rules={rules}
+              disabled={disabled}
             />
           );
         }
@@ -137,6 +147,7 @@ class FieldEditor extends Component {
             title={title}
             dataSource={field.dataSource}
             rules={rules}
+            disabled={disabled}
           />
         );
       }

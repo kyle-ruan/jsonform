@@ -12,11 +12,11 @@ const ObjectEditor = (({ name, title, form, properties, value, rules, rows }) =>
         rows.map((row, rowIndex) => {
           return (
             <Row key={rowIndex}>
-              {row.map(({ propName, span }) => {
+              {row.map(({ propName, span, visible = true, disabled }) => {
                 const field = properties[propName];
                 const childValue = value[propName];
                 return (
-                  <Col {...span} key={propName}>
+                  <Col {...span} key={propName} style={visible ? {} : { display: 'none' }}>
                     <FieldEditor
                       key={propName}
                       form={form}
@@ -24,6 +24,7 @@ const ObjectEditor = (({ name, title, form, properties, value, rules, rows }) =>
                       name={`${name}.${propName}`}
                       field={field}
                       rules={rules}
+                      disabled={disabled}
                     />
                   </Col>
                 );

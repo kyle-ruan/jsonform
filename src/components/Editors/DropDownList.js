@@ -58,7 +58,7 @@ class DropDownList extends Component {
     });
   }
   render() {
-    const { name, title, value = '', form, rules } = this.props;
+    const { name, title, value = '', form, rules, disabled } = this.props;
     const { getFieldDecorator } = form;
     return (
       <div className='json-form-group'>
@@ -71,7 +71,7 @@ class DropDownList extends Component {
                  initialValue: value,
                  rules
                })(
-                 <Select>
+                 <Select disabled={disabled}>
                    {this.renderOptions()}
                  </Select>
              )}

@@ -83,7 +83,7 @@ class MultiSelect extends Component {
   }
 
   render() {
-    const { name, title, value = [], form, rules } = this.props;
+    const { name, title, value = [], form, rules, disabled } = this.props;
     const { getFieldDecorator } = form;
 
     const btnCls = classNames({
@@ -110,6 +110,7 @@ class MultiSelect extends Component {
               })(
                      <Select
                        multiple
+                       disabled={disabled}
                        filterOption={(inputValue, option) => {
                          return option.props.children.indexOf(inputValue) > -1;
                        }}

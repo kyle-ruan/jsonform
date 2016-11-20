@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Form } from 'antd';
+import { Modal, Form, Row, Col } from 'antd';
 import FieldEditor from '../FieldEditor';
 
 class ModalForm extends Component {
@@ -13,30 +13,38 @@ class ModalForm extends Component {
   }
 
   renderModalItem() {
-    const { visible } = this.props;
-    if (!visible) return;
-    const { properties, item, form, rules } = this.props;
+    const modalVisible = this.props.visible;
+    if (!modalVisible) return;
+    const { properties, item, form, rules, rows } = this.props;
 
-    return Object.keys(properties).map((key) => {
-      const field = properties[key];
-      const childValue = item[key];
+    return rows.map((row, rowIndex) => {
+        return (
+          <Row key={rowIndex}>
+            {row.map(({ propName, span, visible = true, disabled }) => {
+              const field = properties[propName];
+              const childValue = item[propName];
 
-      return (
-        <div key={key}>
-          <FieldEditor
-            form={form}
-            value={childValue}
-            name={key}
-            field={field}
-            rules={rules}
-          />
-        </div>
-      );
-    });
+              return (
+                <Col {...span} key={propName} style={visible ? {} : { display: 'none' }}>
+                  <FieldEditor
+                    form={form}
+                    value={childValue}
+                    name={propName}
+                    field={field}
+                    rules={rules}
+                    disabled={disabled}
+                  />
+                </Col>
+              );
+            })}
+          </Row>
+        );
+      });
   }
 
   render() {
     const { visible, onModalClose, editMode } = this.props;
+
     const title = editMode ? 'Edit Item' : 'Add Item';
     return (
       <Modal

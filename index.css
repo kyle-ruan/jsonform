@@ -8,14 +8,8 @@ html, body, #root {
   width: 80%;
 }
 
-.ant-btn {
-  border-radius: 0px;
-}
-
-.ant-input, .ant-select-selection {
-  border-radius: 0px;
-}
-
+.ant-btn,
+.ant-input, .ant-select-selection,
 .ant-search-input .ant-search-btn {
   border-radius: 0px;
 }
@@ -61,7 +55,7 @@ html, body, #root {
 }
 
 .json-form-control {
-
+  padding-right: 15px;
 }
 
 .json-form-object {

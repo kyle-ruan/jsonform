@@ -3,7 +3,7 @@ import { Form, Input } from 'antd';
 
 const FormItem = Form.Item;
 
-const TextBox = ({ value = '', title, name, form, format = 'text', rules }) => {
+const TextBox = ({ value = '', title, name, form, format = 'text', rules, disabled }) => {
   const { getFieldDecorator } = form;
   return (
     <div className='json-form-group'>
@@ -16,7 +16,7 @@ const TextBox = ({ value = '', title, name, form, format = 'text', rules }) => {
                initialValue: value,
                rules
              })(
-             <Input type={format} />
+             <Input type={format} disabled={disabled} />
            )}
         </FormItem>
       </div>

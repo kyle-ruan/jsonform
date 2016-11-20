@@ -37,7 +37,8 @@ class AutoComplete extends Component {
   }
 
   renderFormItem() {
-    const { name, value = '', form, rules } = this.props;
+    const { name, value = '', form, rules, disabled } = this.props;
+
     const { getFieldDecorator } = form;
     return (
       <FormItem>
@@ -45,7 +46,7 @@ class AutoComplete extends Component {
              initialValue: value,
              rules
            })(
-             <AntAutoComplete>
+             <AntAutoComplete disabled={disabled}>
                {this.renderOptions()}
              </AntAutoComplete>
          )}

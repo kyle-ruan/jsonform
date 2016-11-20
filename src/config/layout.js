@@ -4,7 +4,11 @@ const layout = {
       rows: [
         [
           { name: 'TextInput', span: { xs: 24, sm: 24, md: 12, lg: 12 } },
-          { name: 'AutoCompleteInput', span: { xs: 24, sm: 24, md: 12, lg: 12 } }
+          {
+            name: 'AutoCompleteInput',
+            span: { xs: 24, sm: 24, md: 12, lg: 12 },
+            disabled: true
+          }
         ],
         [
           { name: 'DateInput', span: { xs: 24, sm: 24, md: 12, lg: 12 } },
@@ -19,7 +23,7 @@ const layout = {
           { name: 'AsnycMultipleSelect', span: { xs: 24, sm: 24, md: 12, lg: 12 } }
         ],
         [
-          { name: 'TextAreaInput', span: 24 }
+          { name: 'TextAreaInput', span: 24, disabled: true }
         ],
         [
           {
@@ -27,7 +31,11 @@ const layout = {
             span: { xs: 24, sm: 24, md: 24, lg: 24 },
             rows: [
               [
-                { propName: 'FirstName', span: { xs: 24, sm: 24, md: 12, lg: 12 } },
+                {
+                  propName: 'FirstName',
+                  span: { xs: 24, sm: 24, md: 12, lg: 12 },
+                  disabled: true
+                },
                 { propName: 'LastName', span: { xs: 24, sm: 24, md: 12, lg: 12 } }
               ],
               [
@@ -37,7 +45,24 @@ const layout = {
           }
         ],
         [
-          { name: 'Clients', span: 24 }
+          { name: 'Clients',
+            rows: [
+              [
+                {
+                  propName: 'FirstName',
+                  span: { xs: 24, sm: 24, md: 12, lg: 12 },
+                  disabled: true
+                },
+                {
+                  propName: 'LastName',
+                  span: { xs: 24, sm: 24, md: 12, lg: 12 }
+                }
+              ],
+              [
+                { propName: 'DateOfBirth', span: { xs: 24, sm: 24, md: 24, lg: 24 } }
+              ]
+            ]
+          }
         ]
       ],
       span: { xs: 24, sm: 24, md: 24, lg: 24 }

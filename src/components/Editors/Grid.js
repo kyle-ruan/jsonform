@@ -203,13 +203,14 @@ class Grid extends Component {
 
   renderModal() {
     const { visible, modalItem, editItemIndex } = this.state;
-    const { properties } = this.props;
+    const { properties, rows } = this.props;
     const editMode = editItemIndex > -1;
 
     return (
       <ModalForm
         ref={this.saveFormRef.bind(this)}
         visible={visible}
+        rows={rows}
         item={modalItem}
         properties={properties}
         onModalClose={this.onModalClose.bind(this)}

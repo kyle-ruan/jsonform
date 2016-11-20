@@ -9,7 +9,8 @@ const DateTimePicker = ({
   title,
   form,
   value,
-  rules
+  rules,
+  disabled
 }) => {
   const { getFieldDecorator } = form;
 
@@ -26,6 +27,7 @@ const DateTimePicker = ({
              })(
                <AntDatePicker
                  format={format}
+                 disabled={disabled}
                  showTime
                />
            )}

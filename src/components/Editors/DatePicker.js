@@ -4,7 +4,7 @@ import { Form, DatePicker as AntDatePicker } from 'antd';
 const FormItem = Form.Item;
 const format = 'YYYY-MM-DD';
 
-const DatePicker = ({ name, title, value, form, rules }) => {
+const DatePicker = ({ name, title, value, form, rules, disabled }) => {
   const { getFieldDecorator } = form;
   return (
     <div className='json-form-group'>
@@ -19,6 +19,7 @@ const DatePicker = ({ name, title, value, form, rules }) => {
              })(
              <AntDatePicker
                format={format}
+               disabled={disabled}
              />
            )}
         </FormItem>

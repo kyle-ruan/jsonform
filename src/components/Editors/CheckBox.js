@@ -3,7 +3,7 @@ import { Form, Switch } from 'antd';
 
 const FormItem = Form.Item;
 
-const CheckBox = ({ name, title, value = false, form, rules }) => {
+const CheckBox = ({ name, title, value = false, form, rules, disabled }) => {
   const { getFieldDecorator } = form;
 
   return (
@@ -18,7 +18,7 @@ const CheckBox = ({ name, title, value = false, form, rules }) => {
             valuePropName: 'checked',
             rules
           })(
-            <Switch />
+            <Switch disabled={disabled} />
           )}
         </FormItem>
       </div>
