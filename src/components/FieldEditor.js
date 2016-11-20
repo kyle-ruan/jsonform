@@ -9,6 +9,8 @@ import { AutoComplete } from './Editors/AutoComplete';
 import { DatePicker } from './Editors/DatePicker';
 import { TimePicker } from './Editors/TimePicker';
 import { DateTimePicker } from './Editors/DateTimePicker';
+import { DateRangePicker } from './Editors/DateRangePicker';
+import { DateTimeRangePicker } from './Editors/DateTimeRangePicker';
 import { ObjectEditor } from './Editors/ObjectEditor';
 
 class FieldEditor extends Component {
@@ -97,6 +99,32 @@ class FieldEditor extends Component {
       case 'datetime': {
         return (
           <DateTimePicker
+            value={value}
+            form={form}
+            name={name}
+            title={title}
+            rules={rules}
+            disabled={disabled}
+          />
+        );
+      }
+
+      case 'daterange': {
+        return (
+          <DateRangePicker
+            value={value}
+            form={form}
+            name={name}
+            title={title}
+            rules={rules}
+            disabled={disabled}
+          />
+        );
+      }
+
+      case 'datetimerange': {
+        return (
+          <DateTimeRangePicker
             value={value}
             form={form}
             name={name}

@@ -17,9 +17,9 @@ const schema = {
         default: ''
       },
       DateOfBirth: {
-        type: 'date',
+        type: 'datetimerange',
         title: 'Date Of Birth',
-        default: ''
+        default: []
       }
     }
   },
