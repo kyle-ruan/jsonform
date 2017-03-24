@@ -17,9 +17,9 @@ class AutoComplete extends Component {
     if (dataSource.async) {
       // read data
       axios.get(dataSource.read)
-        .then(({ data: { customers } }) => {
-          const options = customers.map(customer => {
-            return customer.name;
+        .then(({ data: { data } }) => {
+          const options = data.map(item => {
+            return item.name;
           });
           this.setState({ options });
         });

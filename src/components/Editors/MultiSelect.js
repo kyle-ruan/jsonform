@@ -21,11 +21,11 @@ class MultiSelect extends Component {
     if (dataSource.async) {
       // read data
       axios.get(dataSource.read)
-        .then(({ data: { customers } }) => {
-          const options = customers.map(customer => {
+        .then(({ data: { data } }) => {
+          const options = data.map(({ id, name }) => {
             return {
-              text: customer.name,
-              value: customer.id
+              text: name,
+              value: id
             };
           });
           this.setState({ options });

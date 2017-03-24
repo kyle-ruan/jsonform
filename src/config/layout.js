@@ -49,8 +49,7 @@ const layout = {
               [
                 {
                   propName: 'FirstName',
-                  span: { xs: 24, sm: 24, md: 12, lg: 12 },
-                  disabled: true
+                  span: { xs: 24, sm: 24, md: 12, lg: 12 }
                 },
                 {
                   propName: 'LastName',
